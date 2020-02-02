@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  background-color: #2d132c;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 250px;
+  height: 450px;
+  position: relative;
+  color: #fff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 2.5rem;
+  transition: transform 0.75s ease-in;
+  transform-style: preserve-3d;
+  animation: flip 2s linear infinite alternate;
+}
+
+.front,
+.back {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.front {
+  background-color: #801336;
+}
+
+.back {
+  background-color: #ee4540;
+  transform: rotateX(180deg);
+}
+
+@keyframes flip {
+  0% {
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+  100% {
+    transform: rotate3d(1, 1, 0, 180deg);
+  }
+}
